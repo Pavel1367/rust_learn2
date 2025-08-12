@@ -1,8 +1,3 @@
-struct Point {
-    x: u64,
-    y: u64,
-}
-
 enum Message {
     Resize { width: u64, height: u64 },
     Move(Point),
@@ -105,3 +100,34 @@ mod tests {
         assert!(state.quit);
     }
 }
+struct Container<T> {
+    data: T,
+}
+
+impl<T> Container<T> {
+    fn new(value: T) -> Self {
+        Container { data: value }
+    }
+}
+fn new_s() {
+    let mut container: Container<String> = Container::new("hello");
+}
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Point<T> {
+    fn distance(&self) -> T {
+        (self.x.pow(2) + self.y.pow(2)).sqrt()
+    }
+}
+enum Option<R> {
+    Some(R),
+    None,
+}
+fn calc() {
+    let some_value: Option<String> = Option::Some(String::from("hello"));
+}
+
+

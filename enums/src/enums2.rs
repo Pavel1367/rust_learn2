@@ -6,7 +6,7 @@ struct Point {
 
 #[derive(Debug)]
 enum Message {
-    Resize{width:u32, height:u32},
+    Resize { width: u32, height: u32 },
     Move(Point),
     Echo(String),
     ChangeColor(u8, u8, u8),

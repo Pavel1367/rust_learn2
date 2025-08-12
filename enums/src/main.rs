@@ -1,16 +1,16 @@
-mod shape;
 mod enums2;
 mod enums3;
+mod shape;
 
 #[derive(Debug)]
-enum TrafficLight{
+enum TrafficLight {
     Red,
     Yellow,
-    Green
+    Green,
 }
 impl TrafficLight {
-    fn next(&self) -> TrafficLight{
-        match self{
+    fn next(&self) -> TrafficLight {
+        match self {
             TrafficLight::Green => TrafficLight::Red,
             TrafficLight::Red => TrafficLight::Yellow,
             TrafficLight::Yellow => TrafficLight::Green,
@@ -19,5 +19,5 @@ impl TrafficLight {
 }
 fn main() {
     println!("Hello, world!");
-    println!("Next after red: {:?}",TrafficLight::Red.next())
+    println!("Next after red: {:?}", TrafficLight::Red.next())
 }
